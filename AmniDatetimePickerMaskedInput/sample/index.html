@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">    
+    <link href="css/bootstrap-datetimepicker.css" rel="stylesheet">    
+	<style >
+	.well {
+		margin:8px;
+	}
+	</style>
+	<script type="text/javascript" src="js/jquery.js"></script>	
+	<script type="text/javascript" src="js/bootstrap.js"></script>	
+	<script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>
+	<script type="text/javascript" src="js/amni-datetimepicker-maskedinput.js"></script>
+	<script>
+	$(document).ready(function() { 
+		$('#datetimepicker1').datetimepicker({ language: 'en' }).datetimeInputMask();
+	    $('#datetimepicker2').datetimepicker({ language: 'en' }).datetimeInputMask();
+	    	    
+		$("#displayValue").click( function(){			
+			$("#datetimepicker1-value").text($("#datetimepicker1 input").val() );
+			$("#datetimepicker2-value").text($("#datetimepicker2 input").val() );
+			
+			
+		});
+	});
+	
+
+	</script>
+<title>TEST for amni-datetimepicker-maskedinput</title>
+</head>
+<body>
+
+
+<div class="well">
+  <div><strong>format</strong> yyyy-MM-dd hh:mm:ss</div>
+  <div id="datetimepicker1" class="input-append date control-group">
+    <input data-format="yyyy-MM-dd hh:mm:ss" type="text"></input>
+    <span class="add-on">
+      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+      </i>
+    </span>    
+  </div>
+  
+  
+  <div><strong>format</strong> [dd]/[MM]/[yyyy] hh:mm:ss</div>
+  <div id="datetimepicker2" class="input-append date control-group">
+    <input data-format="[dd]/[MM]/[yyyy] hh:mm:ss" type="text"></input>
+    <span class="add-on">
+      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+      </i>
+    </span>    
+  </div>
+  
+  <table class="table-striped table-bordered">
+	  <tr>
+	  	<td><code><i class="icon-arrow-left"></i> key</code></td>
+	  	<td>Move text selection to the previous position</td>
+	  </tr>
+	  
+	  <tr>
+	  	<td><code><i class="icon-arrow-right"></i> key</code></td>
+	  	<td>Move text selection to the next position</td>
+	  </tr>
+	  
+	  <tr>
+	  	<td><code><i class="icon-arrow-up"></i> key</code></td>
+	  	<td>Increase number of the field which has text selection</td>
+	  </tr>
+	  
+	  <tr>
+	  	<td><code><i class="icon-arrow-down"></i> key</code></td>
+	  	<td>Decrease number of the field which has text selection</td>
+	  </tr>
+	  
+	  <tr>
+	  	<td><code>numeric key</code></td>
+	  	<td>overwrite the number on the text selection, and move test selection to the next position</td>
+	  </tr>
+	  
+	  <tr>
+	  	<td><code>tab key</code></td>
+	  	<td>move the focus to the next tabbable element.</td>
+	  </tr>
+	  
+  </table>
+  
+  <div id="datetimepicker2-value"></div>
+</div>
+
+<button id="displayValue">Display value in INPUT</button>
+
+</body>
+</html>
